@@ -421,8 +421,8 @@ input[type="password"],
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #000; /* Fondo negro */
-            color: #fff; /* Texto blanco */
+            background-color: #000; 
+            color: #fff; 
         }
 
         .container {
@@ -439,7 +439,7 @@ input[type="password"],
         .avatar-container img {
             width: 200px;
             height: 400px;
-            border: 2px solid #fff; /* Borde blanco */
+            border: 2px solid #fff;
             border-radius: 10px;
             margin-bottom: 20px;
         }
@@ -448,8 +448,8 @@ input[type="password"],
             flex: 1;
             padding: 20px;
             text-align: center;
-            background-color: #333; /* Fondo gris oscuro */
-            border: 2px solid #444; /* Borde más claro */
+            background-color: #333; 
+            border: 2px solid #444;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
@@ -458,7 +458,7 @@ input[type="password"],
             display: block;
             margin: 10px auto;
             padding: 10px 20px;
-            background-color: #007BFF; /* Botones en tono azul */
+            background-color: #007BFF; 
             color: white;
             border: none;
             border-radius: 5px;
@@ -467,7 +467,7 @@ input[type="password"],
         }
 
         .options-container button:hover {
-            background-color: #0056b3; /* Cambio de tono al pasar el ratón */
+            background-color: #0056b3; 
         }
 
         .options-container button:disabled {
