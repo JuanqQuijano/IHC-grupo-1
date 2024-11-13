@@ -9,12 +9,11 @@
 <body>
 
     <div class="container">
-        <!-- Imagen de la persona (Izquierda) -->
+   
         <div class="avatar-container">
-            <img id="avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Avatar de persona"> <!-- Imagen de persona -->
+            <img id="avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Avatar de persona"> 
         </div>
 
-        <!-- Opciones de vestimenta (Derecha) -->
         <div class="options-container">
             <h3>Selecciona una vestimenta</h3>
             <button onclick="cambiarVestimenta('polo1')">Polo 1</button>
@@ -28,11 +27,10 @@
     </div>
 
     <script>
-        // Función para cambiar la vestimenta
+        
         function cambiarVestimenta(ropa) {
             const avatar = document.getElementById('avatar');
             
-            // Cambiar la imagen del avatar dependiendo de la ropa seleccionada
             switch (ropa) {
                 case 'polo1':
                     avatar.src = 'https://via.placeholder.com/200x400.png?text=Polo+1';
@@ -50,22 +48,23 @@
                     avatar.src = 'https://via.placeholder.com/200x400.png?text=Casaca+3';
                     break;
                 default:
-                    avatar.src = 'https://randomuser.me/api/portraits/men/75.jpg'; // Imagen de la persona base
+                    avatar.src = 'https://randomuser.me/api/portraits/men/75.jpg'; 
                     break;
             }
         }
 
-        // Función para quitar la vestimenta
+       
         function quitarVestimenta() {
             const avatar = document.getElementById('avatar');
-            avatar.src = 'https://randomuser.me/api/portraits/men/75.jpg'; // Restablecer a la imagen base
+            avatar.src = 'https://randomuser.me/api/portraits/men/75.jpg'; 
         }
 
-        // Función para guardar el avatar
+    
         function guardarAvatar() {
             alert('Avatar guardado correctamente.');
-            // Aquí podrías agregar funcionalidad para guardar el avatar en un servidor o almacenamiento local
+           
         }
+        
     </script>
 
 </body>
