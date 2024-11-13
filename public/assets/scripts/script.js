@@ -99,7 +99,7 @@ function enviarMensaje() {
 function responderAutomaticamente() {
     
     setTimeout(() => {
-        const respuesta = generarRespuesta(); // Genera una respuesta de ejemplo
+        const respuesta = generarRespuesta(); 
 
         const mensajeRespuesta = document.createElement('div');
         mensajeRespuesta.classList.add('mensaje-otro');
@@ -139,7 +139,6 @@ function tomarFoto() {
   
   avatarImage.src = document.getElementById("cameraPreview").src;
   
-  // Oculta la sección de la cámara y muestra la de personalización
   cameraSection.classList.remove("visible");
   avatarSection.classList.add("visible");
 }
