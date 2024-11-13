@@ -4,34 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensajes - Avaria</title>
-    <link rel="stylesheet" href="public/assets/styles/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="menu-lateral" class="menu-lateral">
         <div class="menu-barra">
             <button class="menu-boton">
-                <img src="public/assets/images/barraLateral.png" alt="barra" class="icono">
+                <img src="img/imgMain/barraLateral.png" alt="barra" class="icono">
             </button>
         </div>
         <div class="menu-opciones">
             <button class="menu-boton" onclick="location.href='mensajes.html'">
-                <img src="public/assets/images/chat.png" alt="Chat" class="icono">
+                <img src="img/imgMain/chat.png" alt="Chat" class="icono">
                 Chat
             </button>
-            <button class="menu-boton">
-                <img src="public/assets/images/persona.png" alt="Avatares" class="icono">
+            <button class="menu-boton" onclick="location.href='avatares.html'">
+                <img src="img/imgMain/persona.png" alt="Avatares" class="icono">
                 Avatares
             </button>
-            <button class="menu-boton">
-                <img src="public/assets/images/estrella.png" alt="Vestimenta" class="icono">
+            <button class="menu-boton" onclick="location.href='vestimenta.html'">
+                <img src="img/imgMain/estrella.png" alt="Vestimenta" class="icono">
                 Vestimenta
             </button>
-            <button class="menu-boton">
-                <img src="public/assets/images/paraguas.png" alt="Accesorios" class="icono">
+            <button class="menu-boton" onclick="location.href='accesorios.html'">
+                <img src="img/imgMain/paraguas.png" alt="Accesorios" class="icono">
                 Accesorios
             </button>
             <button class="menu-boton">
-                <img src="public/assets/images/paquete.png" alt="Paquetes" class="icono">
+                <img src="img/imgMain/paquete.png" alt="Paquetes" class="icono">
                 Paquetes
             </button>
         </div>
@@ -40,27 +40,27 @@
         <div class="lista-conversaciones">
             <h2>Mensajes</h2>
             <div class="conversacion seleccionada"  onclick="cambiarChat(1)">
-                <img src="public/assets/images/LogoAvaria.png" alt="ImgPerfil" class="imgPerfil">
+                <img src="img/LogoAvaria.png" alt="ImgPerfil" class="imgPerfil">
                 <p class="mensaje-previo">Anna - Whatsapp <br> Oye Francisco, estas?</p>
                 <span class="hora">10 min</span>
             </div>  
             <div class="conversacion" onclick="cambiarChat(2)">
-                <img src="public/assets/images/LogoAvaria.png" alt="ImgPerfil" class="imgPerfil">
+                <img src="img/LogoAvaria.png" alt="ImgPerfil" class="imgPerfil">
                 <p class="mensaje-previo">Luis - Telegram <br> Hola! ¿Cómo estás?</p>
                 <span class="hora">15 min</span>
             </div>
             <div class="conversacion" onclick="cambiarChat(3)">
-                <img src="public/assets/images/LogoAvaria.png" alt="ImgPerfil" class="imgPerfil">
+                <img src="img/LogoAvaria.png" alt="ImgPerfil" class="imgPerfil">
                 <p class="mensaje-previo">Maria - Telegram <br> Buenos días, todo bien?</p>
                 <span class="hora">20 min</span>
             </div>
             <div class="conversacion" onclick="cambiarChat(4)">
-                <img src="public/assets/images/LogoAvaria.png" alt="ImgPerfil" class="imgPerfil">
+                <img src="img/LogoAvaria.png" alt="ImgPerfil" class="imgPerfil">
                 <p class="mensaje-previo">Carlos - Messenger <br> Vamos a la reunión?</p>
                 <span class="hora">1 hora</span>
             </div>
             <div class="conversacion" onclick="cambiarChat(5)">
-                <img src="public/assets/images/LogoAvaria.png" alt="ImgPerfil" class="imgPerfil">
+                <img src="img/LogoAvaria.png" alt="ImgPerfil" class="imgPerfil">
                 <p class="mensaje-previo">Sofía - WhatsApp <br> Qué planes para hoy?</p>
                 <span class="hora">2 horas</span>
             </div>
@@ -70,7 +70,7 @@
             <div class="encabezado-conversacion">
                 <h2 id="nombre-chat">Selecciona una conversación</h2>
                 <div class="iconos">
-                    <img src="public/assets/images/persona.png" alt="Configuración">
+                    <img src="img/imgMain/persona.png" alt="Configuración">
                 </div>
             </div>
             <div id="mensajes" class="mensajes">
@@ -80,12 +80,12 @@
                 <input id="mensaje-input" type="text" placeholder="Escribe un mensaje...">
                 <button onclick="enviarMensaje()">Enviar</button>
                 <div class="iconos-barra">
-                    <img src="public/assets/images/emoji.png" alt="Emojis">
-                    <img src="public/assets/images/microfono.png" alt="Grabar">
+                    <img src="img/imgMain/emoji.png" alt="Emojis">
+                    <img src="img/imgMain/microfono.png" alt="Grabar">
                 </div>
             </div>
         </div>
     </div>
-    <script src="public/assets/scripts/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
