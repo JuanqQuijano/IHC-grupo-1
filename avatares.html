@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creador de Avatar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="menu-lateral" class="menu-lateral">
+    <div class="menu-barra">
+        <button class="menu-boton">
+            <img src="img/imgMain/barraLateral.png" alt="barra" class="icono">
+        </button>
+    </div>
+    <div class="menu-opciones">
+        <button class="menu-boton" onclick="location.href='mensajes.html'">
+            <img src="img/imgMain/chat.png" alt="Chat" class="icono">
+            Chat
+        </button>
+        <button class="menu-boton" onclick="location.href='avatares.html'">
+            <img src="img/imgMain/persona.png" alt="Avatares" class="icono">
+            Avatares
+        </button>
+        <button class="menu-boton" onclick="location.href='vestimenta.html'">
+            <img src="img/imgMain/estrella.png" alt="Vestimenta" class="icono">
+            Vestimenta
+        </button>
+        <button class="menu-boton" onclick="location.href='accesorios.html'">
+            <img src="img/imgMain/paraguas.png" alt="Accesorios" class="icono">
+            Accesorios
+        </button>
+        <button class="menu-boton">
+            <img src="img/imgMain/paquete.png" alt="Paquetes" class="icono">
+            Paquetes
+        </button>
+    </div>
+</div>
+  <!-- Sección de Cámara -->
+  <div class="container camera-section visible" id="cameraSection">
+    <h2>Tómate una foto</h2>
+    <div class="camera-frame">
+      <div class="camera-icon">📷</div>
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Previsualización de Foto" id="cameraPreview">
+      <button class="capture-button" onclick="tomarFoto()"></button>
+    </div>
+  </div>
+
+  <!-- Sección de Personalización de Avatar -->
+  <div class="container avatar-preview" id="avatarSection">
+    <h2>Personaliza tu Avatar</h2>
+    <div class="avatar-preview">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar Preview" id="avatarImage">
+    </div>
+    <div class="controls">
+      <div class="control">
+        <label for="profundidad">Profundidad</label>
+        <input type="range" id="profundidad" min="0" max="100" value="50">
+      </div>
+      <div class="control">
+        <label for="color">Color de piel</label>
+        <input type="color" id="color" value="#f4c2c2">
+      </div>
+      <div class="control">
+        <label for="tamano">Tamaño</label>
+        <input type="range" id="tamano" min="0" max="100" value="50">
+      </div>
+      <div class="control">
+        <label for="estiramiento">Estiramiento</label>
+        <input type="range" id="estiramiento" min="0" max="100" value="50">
+      </div>
+    </div>
+    <button onclick="resetAvatar()">Restablecer Avatar</button>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+</html>
