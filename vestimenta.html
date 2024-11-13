@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección de Vestimenta</title>
+   
+</head>
+<body>
+
+    <div class="container">
+        <!-- Imagen de la persona (Izquierda) -->
+        <div class="avatar-container">
+            <img id="avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Avatar de persona"> <!-- Imagen de persona -->
+        </div>
+
+        <!-- Opciones de vestimenta (Derecha) -->
+        <div class="options-container">
+            <h3>Selecciona una vestimenta</h3>
+            <button onclick="cambiarVestimenta('polo1')">Polo 1</button>
+            <button onclick="cambiarVestimenta('polo2')">Polo 2</button>
+            <button onclick="cambiarVestimenta('casaca1')">Casaca 1</button>
+            <button onclick="cambiarVestimenta('casaca2')">Casaca 2</button>
+            <button onclick="cambiarVestimenta('casaca3')">Casaca 3</button>
+            <button onclick="quitarVestimenta()">Quitar Vestimenta</button>
+            <button onclick="guardarAvatar()">Guardar Avatar</button>
+        </div>
+    </div>
+
+    <script>
+        // Función para cambiar la vestimenta
+        function cambiarVestimenta(ropa) {
+            const avatar = document.getElementById('avatar');
+            
+            // Cambiar la imagen del avatar dependiendo de la ropa seleccionada
+            switch (ropa) {
+                case 'polo1':
+                    avatar.src = 'https://via.placeholder.com/200x400.png?text=Polo+1';
+                    break;
+                case 'polo2':
+                    avatar.src = 'https://via.placeholder.com/200x400.png?text=Polo+2';
+                    break;
+                case 'casaca1':
+                    avatar.src = 'https://via.placeholder.com/200x400.png?text=Casaca+1';
+                    break;
+                case 'casaca2':
+                    avatar.src = 'https://via.placeholder.com/200x400.png?text=Casaca+2';
+                    break;
+                case 'casaca3':
+                    avatar.src = 'https://via.placeholder.com/200x400.png?text=Casaca+3';
+                    break;
+                default:
+                    avatar.src = 'https://randomuser.me/api/portraits/men/75.jpg'; // Imagen de la persona base
+                    break;
+            }
+        }
+
+        // Función para quitar la vestimenta
+        function quitarVestimenta() {
+            const avatar = document.getElementById('avatar');
+            avatar.src = 'https://randomuser.me/api/portraits/men/75.jpg'; // Restablecer a la imagen base
+        }
+
+        // Función para guardar el avatar
+        function guardarAvatar() {
+            alert('Avatar guardado correctamente.');
+            // Aquí podrías agregar funcionalidad para guardar el avatar en un servidor o almacenamiento local
+        }
+    </script>
+
+</body>
+</html>
