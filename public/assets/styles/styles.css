@@ -213,6 +213,7 @@ input[type="password"],
 .lista-conversaciones h2 {
     font-size: 24px;
     margin-bottom: 15px;
+    color: #000; 
 }
 
 .lista-conversaciones img {
