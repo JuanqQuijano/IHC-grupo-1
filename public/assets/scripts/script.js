@@ -38,7 +38,7 @@ const chats = {
 };
 
 
-let chatActual = null; 
+let chatActual = null;
 
 function cambiarChat(idChat) {
     const chat = chats[idChat];
@@ -127,3 +127,78 @@ function generarRespuesta() {
     
     return respuestas[Math.floor(Math.random() * respuestas.length)];
 }
+
+
+
+
+const cameraSection = document.getElementById("cameraSection");
+const avatarSection = document.getElementById("avatarSection");
+const avatarImage = document.getElementById("avatarImage");
+
+function tomarFoto() {
+  
+  avatarImage.src = document.getElementById("cameraPreview").src;
+  
+  // Oculta la sección de la cámara y muestra la de personalización
+  cameraSection.classList.remove("visible");
+  avatarSection.classList.add("visible");
+}
+
+
+document.getElementById("color").addEventListener("input", (e) => {
+  avatarImage.style.filter = `sepia(1) saturate(2) hue-rotate(${e.target.value})`;
+});
+
+
+document.getElementById("profundidad").addEventListener("input", (e) => {
+  let depth = e.target.value;
+  avatarImage.style.filter = `brightness(${1 + depth / 100})`;
+});
+
+document.getElementById("tamano").addEventListener("input", (e) => {
+  let size = e.target.value;
+  avatarImage.style.transform = `scale(${1 + size / 100})`;
+});
+
+document.getElementById("estiramiento").addEventListener("input", (e) => {
+  let stretch = e.target.value;
+  avatarImage.style.transform = `scale(${1 + stretch / 100}, ${1 + stretch / 100})`;
+});
+
+function resetAvatar() {
+  document.getElementById("profundidad").value = 50;
+  document.getElementById("color").value = "#f4c2c2";
+  document.getElementById("tamano").value = 50;
+  document.getElementById("estiramiento").value = 50;
+  avatarImage.style.filter = "none";
+  avatarImage.style.transform = "scale(1, 1)";
+}
+
+
+
+
+const avatarPreview = document.getElementById("avatarPreview");
+
+    function toggleAccessory(accessory) {
+      let accessoryElement = document.getElementById(accessory);
+
+      
+      if (accessoryElement) {
+        avatarPreview.removeChild(accessoryElement);
+      } else {
+        
+        accessoryElement = document.createElement("img");
+        accessoryElement.src = `https://img.icons8.com/emoji/48/000000/${accessory}.png`;
+        accessoryElement.id = accessory;
+        accessoryElement.style.position = "absolute";
+        accessoryElement.style.top = "20%";
+        accessoryElement.style.left = "25%";
+        accessoryElement.style.width = "100px";
+        accessoryElement.style.zIndex = 1;
+        avatarPreview.appendChild(accessoryElement);
+      }
+    }
+
+    function saveAvatar() {
+      alert("Avatar guardado con los accesorios seleccionados.");
+    }
