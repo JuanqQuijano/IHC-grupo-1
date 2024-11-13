@@ -1,51 +1,129 @@
+const chats = {
+    1: {
+        nombre: "Anna",
+        mensajes: [
+            { tipo: "otro", texto: "Oye Francisco, estas?" },
+            { tipo: "otro", texto: "Ya terminaste tu parte del trabajo?" },
+            { tipo: "propio", texto: "..." }
+        ]
+    },
+    2: {
+        nombre: "Luis",
+        mensajes: [
+            { tipo: "otro", texto: "Hola! ¿Cómo estás?" },
+            { tipo: "propio", texto: "Bien, gracias!" }
+        ]
+    },
+    3: {
+        nombre: "Maria",
+        mensajes: [
+            { tipo: "otro", texto: "Buenos días!" },
+            { tipo: "propio", texto: "Buenos días, ¿cómo estás?" }
+        ]
+    },
+    4: {
+        nombre: "Carlos",
+        mensajes: [
+            { tipo: "otro", texto: "Vamos a la reunión?" },
+            { tipo: "propio", texto: "Sí, en 5 minutos" }
+        ]
+    },
+    5: {
+        nombre: "Sofía",
+        mensajes: [
+            { tipo: "otro", texto: "Qué planes para hoy?" },
+            { tipo: "propio", texto: "No estoy seguro, ¿alguna idea?" }
+        ]
+    }
+};
+
+
+let chatActual = null; 
+
+function cambiarChat(idChat) {
+    const chat = chats[idChat];
+    chatActual = idChat;
+    const nombreChat = document.getElementById('nombre-chat');
+    const mensajesContainer = document.getElementById('mensajes');
+    const mensajeVacio = document.getElementById('mensaje-vacio');
+
+    if (chat) {
+        nombreChat.textContent = chat.nombre;
+
+       
+        mensajesContainer.innerHTML = '';
+        if (mensajeVacio) {
+            mensajeVacio.style.display = 'none';
+        }
+
+        
+        chat.mensajes.forEach(mensaje => {
+            const nuevoMensaje = document.createElement('div');
+            nuevoMensaje.classList.add(mensaje.tipo === 'propio' ? 'mensaje-propio' : 'mensaje-otro');
+
+            const mensajeParrafo = document.createElement('p');
+            mensajeParrafo.textContent = mensaje.texto;
+            nuevoMensaje.appendChild(mensajeParrafo);
+
+            mensajesContainer.appendChild(nuevoMensaje);
+        });
+    }
+}
+
 function enviarMensaje() {
-    // 
     const mensajeInput = document.getElementById('mensaje-input');
     const mensajeTexto = mensajeInput.value.trim();
 
-    // Si el texto está vacio, no enviará nada
     if (mensajeTexto !== '') {
-        // Crear un nuevo contenedor para el mensaje propio
         const nuevoMensaje = document.createElement('div');
         nuevoMensaje.classList.add('mensaje-propio');
 
-        // Crear el párrafo que contendrá el texto del mensaje
         const mensajeParrafo = document.createElement('p');
         mensajeParrafo.textContent = mensajeTexto;
 
-        // Añadir el párrafo al contenedor del nuevo mensaje
         nuevoMensaje.appendChild(mensajeParrafo);
 
-     
         const mensajesContainer = document.getElementById('mensajes');
-        
-        if (!mensajesContainer) {
-            console.error("Contenedor de mensajes no encontrado");
-            return;
-        }
-
         mensajesContainer.appendChild(nuevoMensaje);
-        console.log("Mensaje enviado:", mensajeTexto);
 
-      
         mensajeInput.value = '';
-
-        // Desplazar al mandar un mensaje
         mensajesContainer.scrollTop = mensajesContainer.scrollHeight;
+
+        
+        responderAutomaticamente();
     } else {
         console.log("El campo de mensaje está vacío.");
     }
 }
 
-
-// Función para ocultar o mostrar solo los íconos inferiores
-function toggleMenu() {
-    const menuOpciones = document.querySelector(".menu-opciones");
+function responderAutomaticamente() {
     
-    if (menuOpciones) {
-        menuOpciones.classList.toggle("oculto");
-    }
+    setTimeout(() => {
+        const respuesta = generarRespuesta(); // Genera una respuesta de ejemplo
+
+        const mensajeRespuesta = document.createElement('div');
+        mensajeRespuesta.classList.add('mensaje-otro');
+
+        const mensajeParrafo = document.createElement('p');
+        mensajeParrafo.textContent = respuesta;
+        mensajeRespuesta.appendChild(mensajeParrafo);
+
+        const mensajesContainer = document.getElementById('mensajes');
+        mensajesContainer.appendChild(mensajeRespuesta);
+
+        mensajesContainer.scrollTop = mensajesContainer.scrollHeight;
+    }, 1000); // 1 segundo de retraso
 }
 
-// Event listener para el botón del menú
-document.querySelector(".menu-barra button").addEventListener("click", toggleMenu);
+function generarRespuesta() {
+    
+    const respuestas = [
+        "Estoy aquí para ayudarte.",
+        "¿Podrías darme más detalles?",
+        "Entendido.",
+        "Déjame revisarlo rápidamente.",
+        "¿Hay algo más en lo que te pueda ayudar?"
+    ];
+    
+    return respuestas[Math.floor(Math.random() * respuestas.length)];
+}
