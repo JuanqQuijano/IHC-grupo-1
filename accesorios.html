@@ -13,7 +13,7 @@
       <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar Preview" id="avatarImage">
     </div>
 
-    <!-- Lista de accesorios -->
+    
     <div class="accessories-list">
       <p>Selecciona un accesorio:</p>
       <img src="https://img.icons8.com/emoji/48/000000/sunglasses-emoji.png" alt="Sunglasses" onclick="toggleAccessory('sunglasses')">
@@ -36,11 +36,11 @@
     function toggleAccessory(accessory) {
       let accessoryElement = document.getElementById(accessory);
 
-      // Si el accesorio ya está presente, se elimina
+      
       if (accessoryElement) {
         avatarPreview.removeChild(accessoryElement);
       } else {
-        // Crear un nuevo accesorio y agregarlo
+        
         accessoryElement = document.createElement("img");
         accessoryElement.src = `https://img.icons8.com/emoji/48/000000/${accessory}.png`;
         accessoryElement.id = accessory;
