@@ -35,6 +35,8 @@ h2 {
    
 }
 
+
+
 button {
     width: 300px;
     padding: 15px;
@@ -96,6 +98,7 @@ input[type="password"],
 }
 
 
+/*mainMenu.html*/
 
 .menu-lateral {
     width: 80px;
@@ -105,6 +108,10 @@ input[type="password"],
     align-items: center;
     padding: 20px 0;
     border-right: 2px solid #ddd;
+    position: fixed; 
+    left: 0;
+    top: 0; 
+    height: 100%; 
     
 }
 
@@ -134,7 +141,7 @@ input[type="password"],
     align-items: center;
     gap: 5px;
     padding: 15px; 
-    transition: all 0.2s ease-in-out; 
+    transition: all 0.2s ease-in-out;
     width: 75px; 
     border-radius: 20px; 
 }
@@ -165,12 +172,12 @@ input[type="password"],
     width: 100%;
     max-width: 800px; 
     margin: 0 auto;
-    justify-items: center;    
+    justify-items: center;   
 }
 
 .avatar:nth-child(1) {
     grid-column: 1 / 2;
-    grid-row: 1 / 3; 
+    grid-row: 1 / 3;
     width: 100%;
     height: 100%;
 }
@@ -192,6 +199,7 @@ input[type="password"],
     display: flex;
     height: 100vh;
     width: 180vh ;
+    margin-right: 90px; 
 }
 
 
@@ -208,11 +216,11 @@ input[type="password"],
 }
 
 .lista-conversaciones img {
-    width: 50px;
+    width: 50px; 
     height: 50px;
     border-radius: 50%;
     margin-right: 10px;
-    margin-left: 020px;
+    margin-left: 10px;
 }
 
 .conversacion {
