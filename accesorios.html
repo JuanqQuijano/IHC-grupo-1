@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accesorios de Avatar</title>
+  
+</head>
+<body>
+  <div class="container">
+    <!-- Imagen principal del avatar -->
+    <div class="avatar-preview" id="avatarPreview">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar Preview" id="avatarImage">
+    </div>
+
+    <!-- Lista de accesorios -->
+    <div class="accessories-list">
+      <p>Selecciona un accesorio:</p>
+      <img src="https://img.icons8.com/emoji/48/000000/sunglasses-emoji.png" alt="Sunglasses" onclick="toggleAccessory('sunglasses')">
+      <img src="https://img.icons8.com/emoji/48/000000/party-hat.png" alt="Party Hat" onclick="toggleAccessory('partyHat')">
+      <img src="https://img.icons8.com/emoji/48/000000/top-hat.png" alt="Top Hat" onclick="toggleAccessory('topHat')">
+      <img src="https://img.icons8.com/emoji/48/000000/red-heart.png" alt="Heart" onclick="toggleAccessory('heart')">
+      <img src="https://img.icons8.com/emoji/48/000000/crown.png" alt="Crown" onclick="toggleAccessory('crown')">
+      <img src="https://img.icons8.com/emoji/48/000000/eye.png" alt="Eye Patch" onclick="toggleAccessory('eyePatch')">
+      <img src="https://img.icons8.com/emoji/48/000000/mustache.png" alt="Mustache" onclick="toggleAccessory('mustache')">
+      <img src="https://img.icons8.com/emoji/48/000000/bow-tie.png" alt="Bow Tie" onclick="toggleAccessory('bowTie')">
+      <img src="https://img.icons8.com/emoji/48/000000/earrings.png" alt="Earrings" onclick="toggleAccessory('earrings')">
+      <img src="https://img.icons8.com/emoji/48/000000/fire.png" alt="Fire" onclick="toggleAccessory('fire')">
+      <button onclick="saveAvatar()">Guardar Avatar</button>
+    </div>
+  </div>
+
+  <script>
+    const avatarPreview = document.getElementById("avatarPreview");
+
+    function toggleAccessory(accessory) {
+      let accessoryElement = document.getElementById(accessory);
+
+      // Si el accesorio ya está presente, se elimina
+      if (accessoryElement) {
+        avatarPreview.removeChild(accessoryElement);
+      } else {
+        // Crear un nuevo accesorio y agregarlo
+        accessoryElement = document.createElement("img");
+        accessoryElement.src = `https://img.icons8.com/emoji/48/000000/${accessory}.png`;
+        accessoryElement.id = accessory;
+        accessoryElement.style.position = "absolute";
+        accessoryElement.style.top = "20%";
+        accessoryElement.style.left = "25%";
+        accessoryElement.style.width = "100px";
+        accessoryElement.style.zIndex = 1;
+        avatarPreview.appendChild(accessoryElement);
+      }
+    }
+
+    function saveAvatar() {
+      alert("Avatar guardado con los accesorios seleccionados.");
+    }
+  </script>
+</body>
+</html>
