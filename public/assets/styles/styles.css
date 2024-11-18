@@ -98,7 +98,7 @@ input[type="password"],
 }
 
 
-/*mainMenu.html*/
+
 
 .menu-lateral {
     width: 80px;
@@ -251,7 +251,7 @@ input[type="password"],
     color: #888;
 }
 
-/* Panel de mensajes */
+
 .panel-mensajes {
     width: 75%;
     padding: 20px;
@@ -291,7 +291,7 @@ input[type="password"],
     align-self: flex-end;
 }
 
-/* Barra para escribir un mensaje */
+
 .barra-escribir {
     display: flex;
     align-items: center;
@@ -473,4 +473,8 @@ input[type="password"],
 
         .options-container button:disabled {
             background-color: #ccc;
+        }
+
+        .landing-page-body {
+            background-color: #103853; 
         }
