@@ -435,12 +435,6 @@ input[type="password"],
         .avatar-container {
             flex: 1;
             text-align: center;
-        }
-
-
-        .avatar-container {
-            flex: 1;
-            text-align: center;
             overflow: hidden; 
             position: relative;
             width: 200px;
@@ -480,7 +474,6 @@ input[type="password"],
             cursor: pointer;
             font-size: 16px;
         }
-
 
         .options-container button:hover {
             background-color: #0056b3; 
