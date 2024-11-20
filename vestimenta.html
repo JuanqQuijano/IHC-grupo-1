@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="public/assets/styles/styles.css">
     <link rel="icon" href="public/assets/images/LogoAvaria.png">
     <title>Sección de Vestimenta</title>
-   
+    <style>
+       
+
+    </style>
 </head>
 <body>
     <div id="menu-lateral" class="menu-lateral">
@@ -38,64 +41,56 @@
             </button>
         </div>
     </div>
+
     <div class="container">
-   
-        <div class="avatar-container">
-            <img id="avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Avatar de persona"> 
+        <div class="avatar-container" id="avatarContainer">
+            <img src="public/assets/images/hombreEjemplo.png" alt="avatar" id="avatarImage">
         </div>
 
         <div class="options-container">
             <h3>Selecciona una vestimenta</h3>
-            <button onclick="cambiarVestimenta('polo1')">Polo 1</button>
-            <button onclick="cambiarVestimenta('polo2')">Polo 2</button>
-            <button onclick="cambiarVestimenta('casaca1')">Casaca 1</button>
-            <button onclick="cambiarVestimenta('casaca2')">Casaca 2</button>
-            <button onclick="cambiarVestimenta('casaca3')">Casaca 3</button>
-            <button onclick="quitarVestimenta()">Quitar Vestimenta</button>
-            <button onclick="guardarAvatar()">Guardar Avatar</button>
+            <button onclick="toggleAccessory('polo1', 'public/assets/images/polo001.png')">Polo 1</button>
+            <button onclick="toggleAccessory('polo2', 'public/assets/images/polo002.png')">Polo 2</button>
+          
+            <button onclick="removeAccessories()">Quitar Vestimenta</button>
+            <button onclick="saveAvatar()">Guardar Avatar</button>
         </div>
     </div>
 
     <script>
-        
-        function cambiarVestimenta(ropa) {
-            const avatar = document.getElementById('avatar');
-            
-            switch (ropa) {
-                case 'polo1':
-                    avatar.src = 'https://via.placeholder.com/200x400.png?text=Polo+1';
-                    break;
-                case 'polo2':
-                    avatar.src = 'https://via.placeholder.com/200x400.png?text=Polo+2';
-                    break;
-                case 'casaca1':
-                    avatar.src = 'https://via.placeholder.com/200x400.png?text=Casaca+1';
-                    break;
-                case 'casaca2':
-                    avatar.src = 'https://via.placeholder.com/200x400.png?text=Casaca+2';
-                    break;
-                case 'casaca3':
-                    avatar.src = 'https://via.placeholder.com/200x400.png?text=Casaca+3';
-                    break;
-                default:
-                    avatar.src = 'https://randomuser.me/api/portraits/men/75.jpg'; 
-                    break;
+        const avatarContainer = document.getElementById("avatarContainer");
+        const activeAccessories = {};
+
+        function toggleAccessory(accessoryId, imageUrl) {
+            if (activeAccessories[accessoryId]) {
+                avatarContainer.removeChild(activeAccessories[accessoryId]);
+                delete activeAccessories[accessoryId];
+            } else {
+                const accessoryElement = document.createElement("img");
+                accessoryElement.src = imageUrl;
+                accessoryElement.id = accessoryId;
+                accessoryElement.style.position = "absolute";
+                accessoryElement.style.width = "100%"; 
+                accessoryElement.style.height = "100%";
+                accessoryElement.style.top = "20%"; 
+                accessoryElement.style.left = "0";
+                accessoryElement.style.zIndex = 10;
+                accessoryElement.style.objectFit = "cover"; 
+                avatarContainer.appendChild(accessoryElement);
+                activeAccessories[accessoryId] = accessoryElement;
             }
         }
 
-       
-        function quitarVestimenta() {
-            const avatar = document.getElementById('avatar');
-            avatar.src = 'https://randomuser.me/api/portraits/men/75.jpg'; 
+        function removeAccessories() {
+            for (const accessoryId in activeAccessories) {
+                avatarContainer.removeChild(activeAccessories[accessoryId]);
+                delete activeAccessories[accessoryId];
+            }
         }
 
-    
-        function guardarAvatar() {
-            alert('Avatar guardado correctamente.');
-           
+        function saveAvatar() {
+            alert("Avatar guardado con éxito.");
         }
-        
     </script>
-
 </body>
 </html>
