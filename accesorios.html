@@ -48,16 +48,14 @@
     
     <div class="accessories-list">
       <p>Selecciona un accesorio:</p>
-      <img src="https://img.icons8.com/emoji/48/000000/sunglasses-emoji.png" alt="Sunglasses" onclick="toggleAccessory('sunglasses')">
-      <img src="https://img.icons8.com/emoji/48/000000/party-hat.png" alt="Party Hat" onclick="toggleAccessory('partyHat')">
-      <img src="https://img.icons8.com/emoji/48/000000/top-hat.png" alt="Top Hat" onclick="toggleAccessory('topHat')">
-      <img src="https://img.icons8.com/emoji/48/000000/red-heart.png" alt="Heart" onclick="toggleAccessory('heart')">
-      <img src="https://img.icons8.com/emoji/48/000000/crown.png" alt="Crown" onclick="toggleAccessory('crown')">
-      <img src="https://img.icons8.com/emoji/48/000000/eye.png" alt="Eye Patch" onclick="toggleAccessory('eyePatch')">
-      <img src="https://img.icons8.com/emoji/48/000000/mustache.png" alt="Mustache" onclick="toggleAccessory('mustache')">
-      <img src="https://img.icons8.com/emoji/48/000000/bow-tie.png" alt="Bow Tie" onclick="toggleAccessory('bowTie')">
-      <img src="https://img.icons8.com/emoji/48/000000/earrings.png" alt="Earrings" onclick="toggleAccessory('earrings')">
-      <img src="https://img.icons8.com/emoji/48/000000/fire.png" alt="Fire" onclick="toggleAccessory('fire')">
+      <img src="public/assets/images/sunglases.png" alt="sunglases" onclick="toggleAccessory('sunglases')">
+      <img src="public/assets/images/sombrero.png" alt="sombrero" onclick="toggleAccessory('sombrero')">
+      <img src="public/assets/images/corazón.png" alt="corazón" onclick="toggleAccessory('corazón')">
+      <img src="public/assets/images/corona.png" alt="corona" onclick="toggleAccessory('corona')">
+      <img src="public/assets/images/parche.png" alt="parche" onclick="toggleAccessory('parche')">
+      <img src="public/assets/images/mostacho.png" alt="mostacho" onclick="toggleAccessory('mostacho')">
+      <img src="public/assets/images/corbata.png" alt="corbata" onclick="toggleAccessory('corbata')">
+      <img src="public/assets/images/fuego.png" alt="fuego" onclick="toggleAccessory('fuego')">
       <button onclick="saveAvatar()">Guardar Avatar</button>
     </div>
   </div>
@@ -74,7 +72,7 @@
       } else {
         
         accessoryElement = document.createElement("img");
-        accessoryElement.src = `https://img.icons8.com/emoji/48/000000/${accessory}.png`;
+        accessoryElement.src = `public/assets/images/${accessory}.png`;
         accessoryElement.id = accessory;
         accessoryElement.style.position = "absolute";
         accessoryElement.style.top = "20%";
