@@ -1,32 +1,362 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="public/assets/styles/styles.css">
-    <link rel="icon" href="public/assets/images/LogoAvaria.png">
-</head>
-<body class="landing-page-body">
-    
-    <div class="container">
-        <img src="public/assets/images/LogoAvaria.png" alt="Logo" class="logo">
- 
-        <section class="content-section">
-            <h2>¿Quiénes somos?</h2>
-            <p>
-                Somos una empresa especializada en el uso de inteligencia artifical para hacer la vida diaria de nuestros usuarios más llevadera
-            al quitar el peso de las interacciones en linea de sus hombros cuando lo necesiten.
-            </p>
-        </section>
-        <section class="content-section">
-            <h2>Nuestra misión</h2>
-            <p>
-                Nuestra misión consiste en facilitar la comunicación en linea para nuestros usuarios
-                ya sea por dificultades físicas o mentales.
-            </p>
-        </section>
-        <button class="registrate" onclick="location.href='inicio01.html'">Regístrate</button>
-    </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avaria</title>
+    <style>
+        :root {
+  --deep-blue: #001F3F;
+  --bright-blue: #00BFFF;
+  --turquoise: #40E0D0;
+  --orange-red: #FF4500;
+  --tomato: #FF6347;
+  --light-gray: #FAFAFA;
+  --dark-gray: #191919;
+  --section-padding: 4rem 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: var(--dark-gray);
+}
+
+.nav {
+  background-color: var(--deep-blue);
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav ul li {
+  margin: 0 1rem;
+}
+
+.nav ul li a {
+  color: var(--light-gray);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+  color: var(--turquoise);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--light-gray);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.hero {
+  height: 100vh;
+  background-color: var(--deep-blue);
+  color: var(--light-gray);
+  display: flex;
+  align-items: center; /* Update: Center vertically */
+  padding: var(--section-padding);
+  padding-top: 80px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--bright-blue);
+  color: var(--light-gray);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  width: 200px;
+}
+
+.btn:hover {
+  background-color: var(--turquoise);
+}
+
+.content-section {
+  padding: var(--section-padding);
+  background-color: var(--light-gray);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.company-section {
+  padding: var(--section-padding);
+  background-color: white;
+}
+
+.company-logo {
+  width: 200px;
+  height: 150px;
+  margin: 2rem auto;
+  display: block;
+}
+
+.bins-section {
+  padding: var(--section-padding);
+  background-color: var(--turquoise);
+  color: var(--light-gray);
+}
+
+.bins-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+
+}
+
+.bin-item {
+  text-align: center;
+}
+
+.bin-item img {
+  width: 100%;
+  height: 70%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+.faq-section {
+  padding: var(--section-padding);
+  background-color: var(--light-gray);
+}
+
+.faq-item {
+  background-color: white;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 1rem;
+  background-color: var(--bright-blue);
+  color: var(--light-gray);
+  cursor: pointer;
+}
+
+.faq-answer {
+  padding: 1rem;
+  display: none;
+}
+
+footer {
+  background-color: var(--deep-blue);
+  color: var(--light-gray);
+  text-align: center;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+      font-size: 2.5rem;
+  }
+
+  .menu-toggle {
+      display: block;
+  }
+
+  .nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--deep-blue);
+      padding: 1rem 0;
+  }
+
+  .nav ul.show {
+      display: flex;
+  }
+
+  .nav ul li {
+      margin: 0.5rem 0;
+  }
+
+  .nav ul li a {
+      display: block;
+      padding: 0.5rem 2rem;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+    </style>
+    <link rel="icon" href="public/assets/images/LogoAvaria.png" />
+  </head>
+  <body>
+    <body>
+    <nav class="nav">
+         <div class="container nav-container">
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul>
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#content">Sobre Nosotros</a></li>
+                <li><a href="#company">Servicios</a></li>
+                <li><a href="#bins">Beneficios</a></li>
+                <li><a href="#faq">Preguntas</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1>¡BIENVENIDO A AVARIA! <br> <small>La IA que responde por ti cuando no puedes hacerlo</small></h1>
+            <a href="inicio01.html" class="btn" target="_blank">Registrate</a>
+        </div>
+    </section>
+    <section id="content" class="content-section">
+        <div class="container">
+            <h2>SOBRE NOSOSTROS</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <img src="public/assets/images/mision.png" alt="Lorem Ipsum">
+                    <h3>Misión</h3>
+                    <p>Avaria optimiza la comunicación con IA avanzada, ofreciendo gestión personalizada de mensajes y llamadas, garantizando privacidad y seguridad.</p>
+                </div>
+                <div class="card">
+                    <img src="public/assets/images/vision.png" alt="Lorem Ipsum">
+                    <h3>Visión</h3>
+                    <p>Avaria busca liderar la gestión de comunicaciones personalizadas, revolucionando las interacciones digitales con una IA segura y adaptable, esencial para la vida moderna.</p>
+                </div>
+                <div class="card">
+                    <img src="public/assets/images/valores.png" alt="Lorem Ipsum">
+                    <h3>Valores</h3>
+                    <p>Avaria se dedica a brindar soluciones innovadoras y personalizadas, asegurando seguridad, excelencia y flexibilidad para optimizar las comunicaciones digitales a nivel global.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="company" class="company-section">
+        <div class="container">
+            <img src="public/assets/images/servicios.jpg" alt="Lorem Ipsum" class="company-logo">
+            <div class="company-info">
+                <h2>Servicios</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    </section>
+    <section id="bins" class="bins-section">
+        <div class="container">
+            <h2>Beneficios</h2>
+            <div class="bins-grid">
+                <div class="bin-item">
+                    <img src="public/assets/images/tiempo247.png" alt="Lorem Ipsum">
+                    <h3>Disponiblidad 24/7</h3>
+                </div>
+                <div class="bin-item">
+                    <img src="public/assets/images/inteligencia-artificial.jpeg" alt="Lorem Ipsum">
+                    <h3>Interacciones personalizadas</h3>
+                </div>
+                <div class="bin-item">
+                    <img src="public/assets/images/ahorro_tiempo.png" alt="Lorem Ipsum">
+                    <h3>Ahorro de tiempo</h3>
+                </div>
+                <div class="bin-item">
+                    <img src="public/assets/images/Integrar.jpg" alt="Lorem Ipsum">
+                    <h3>Integración con otros chats de otras redes sociales</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2>PREGUNTAS FRECUENTES SOBRE LA APLICACIÓN</h2>
+            <div class="faq-item">
+                <div class="faq-question">¿Como descargo la aplicación?</div>
+                <div class="faq-answer">
+                    <p>Nuestra apliación AVARIA lo puedes descargar desde la PlayStore o AppStore desde cualquier dispositivo iOS o Android.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Puedo desactivar la IA cuando desee?</div>
+                <div class="faq-answer">
+                    <p>Si, cuando consideres que estás libre y puedes responder los mensajes sin ninguna ayuda de la IA, puedes desactivarlo en la sección de configuración.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Puedo usar la aplicación sin crear una cuenta?</div>
+                <div class="faq-answer">
+                    <p>No, es necesario contar con una cuenta registrada para acceder a las funciones que ofrece nuestra aplicación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 AVARIA. Todos los derechos reservados.</p>
+            <p>Contacto: info@avaria.com | Teléfono: (01) 456-8610</p>
+            <p>Dirección: Av. Gral. Salaverry, Lima, Peru</p>
+        </div>
+    </footer>
+    <script src="public/assets/scripts/script.js"></script>
+  </body>
 </html>
