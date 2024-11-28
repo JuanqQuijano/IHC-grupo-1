@@ -7,7 +7,7 @@ Este proyecto es una **página de inicio** desarrollada para la asignatura de **
 ## Autores
 
 - **Integrante 1**: Diego Andres Avalos Cordova
-- **Integrante 2**: Elizabeth Noelia Apaza Bocanegra
+- **Integrante 2**: Elizabeth Noelia Apaza Bocanegra wflhdslfhaldsalsdalsdh
 - **Integrante 3**: Hugo Daniel Huaman Colque
 - **Integrante 4**: Juan Miguel Quijano Calderon
 - **Integrante 5**: Mathias Andree Cardenas Huaman
