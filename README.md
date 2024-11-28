@@ -1,5 +1,5 @@
 # Página de Inicio IHC - Grupo 1
-
+asdfghjkl
 ## Descripción del Proyecto
 
 Este proyecto es una **página de inicio** desarrollada para la asignatura de **(IHC)**. La página tiene como objetivo demostrar una interfaz de usuario intuitiva y amigable para una experiencia de navegación óptima. En este proyecto, se aplican principios de diseño centrado en el usuario, accesibilidad y usabilidad, proporcionando una base sólida para una futura expansión de la aplicación web.
